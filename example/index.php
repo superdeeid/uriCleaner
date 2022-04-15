@@ -1,6 +1,6 @@
 <?php
     
-    use superdeeid\uricleaner\uricleaner;
+    use superdeeid\uricleaner;
         
     //-- example 1
 
@@ -14,7 +14,7 @@
     var_dump( $uri->getCompleteUrl(true) );
     echo "</pre>";
 
-
+    
     //-- example 2
 
     $uri = new uricleaner(); //-- actual url

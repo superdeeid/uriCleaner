@@ -1,6 +1,6 @@
 {
-  "name": "superdeeid/uriCleaner",
-  "description": "",
+  "name": "superdeeid/uricleaner",
+  "description": "A simple, standalone for filtering querystring key/values library",
   "license": "MIT",
   "authors": [
     {
@@ -8,9 +8,10 @@
       "email": "superdeeid@gmail.com"
     }
   ],
+  "type": "library",
   "autoload": {
     "psr-4": {
-      "superdeeid\\uricleaner\\": "src/"
+      "superdeeid\\": "src/"
     }
   },
   "require": {

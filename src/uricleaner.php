@@ -1,6 +1,6 @@
 <?php
     
-    namespace superdeeid\uricleaner;
+    namespace superdeeid;
     
     class uricleaner
     {
@@ -14,19 +14,19 @@
                 $uri   = $_http . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             }
             
-            $_fullUri = pathinfo( $uri );
+            $_fullUri                   = pathinfo( $uri );
+            $_fullUri['dirname']        .= '/';
+            $_fullUri['_queriesArray']  = [];
+            $_fullUri['_queriesString'] = "";
+            
             parse_str( parse_url( $uri, PHP_URL_QUERY ), $_queries );
-            $_fullUri['dirname'] .= "/";
             
             if ( !empty( $_queries ) ) {
-                $_fullUri['_queriesArray']  = $_queries;
-                $_ext                       = explode( "?", $_fullUri['basename'], 2 );
-                $_fullUri['basename']       = $_ext[0];
-                $_fullUri['_queriesString'] = $_ext[1];
-            }
-            else {
-                $_fullUri['_queriesArray']  = [];
-                $_fullUri['_queriesString'] = "";
+                $_fullUri['_queriesArray'] = $_queries;
+                [
+                    $_fullUri['basename'],
+                    $_fullUri['_queriesString'],
+                ] = explode( "?", $_fullUri['basename'], 2 );
             }
             
             $_ext                     = explode( "?", $_fullUri['extension'], 2 );
