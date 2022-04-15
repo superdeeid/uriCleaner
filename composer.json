@@ -1,0 +1,19 @@
+{
+  "name": "superdeeid/uriCleaner",
+  "description": "",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "david paquette",
+      "email": "superdeeid@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "superdeeid\\uricleaner\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  }
+}
